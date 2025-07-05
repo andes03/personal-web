@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Paintbrush2, Code2 } from 'lucide-react';
 import {
@@ -158,10 +158,11 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: false, amount: 0.3 }}
     transition={{ duration: 0.6 }}
-    className="bg-white rounded-2xl p-4 shadow-md border border-gray-100 hover:border-indigo-400 transition-all duration-300 ease-in-out transform group cursor-pointer"
+    whileHover={{ scale: 1.1, rotate: [0, 2, -2, 2, 0] }}
+    className="relative bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out group cursor-pointer"
   >
     <div className="flex flex-col items-center text-center space-y-3">
-      <div className="w-16 h-16 flex items-center justify-center bg-gray-50 rounded-full group-hover:bg-indigo-50 transition-colors duration-300 text-3xl">
+      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 group-hover:from-indigo-200 group-hover:to-purple-200 transition-all text-3xl">
         {skill.icon}
       </div>
       <div className="mt-1">
@@ -193,6 +194,16 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle, icon }) 
 );
 
 export default function Skills() {
+  const [sparkles, setSparkles] = useState<{ top: string; left: string }[]>([]);
+
+  useEffect(() => {
+    const generated = Array.from({ length: 20 }).map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }));
+    setSparkles(generated);
+  }, []);
+
   return (
     <motion.section
       className="w-full h-full min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden"
@@ -202,6 +213,18 @@ export default function Skills() {
       viewport={{ once: false }}
       transition={{ duration: 0.6 }}
     >
+      {/* Floating sparkles */}
+      {sparkles.map((pos, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1.5 h-1.5 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full opacity-60"
+          style={{ top: pos.top, left: pos.left }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
+        />
+      ))}
+
+      {/* Background blobs */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
       <div className="absolute bottom-16 right-16 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute top-16 right-0 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>

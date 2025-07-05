@@ -3,14 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  FaInstagram,
-  FaTiktok,
-  FaLinkedinIn,
   FaCode,
   FaPalette,
   FaRocket,
 } from 'react-icons/fa';
-import { HiOutlineMail, HiSparkles } from 'react-icons/hi';
+import { HiSparkles } from 'react-icons/hi';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -39,7 +36,7 @@ const avatarVariants = {
 
 const floatingVariants = {
   animate: {
-    y: [-8, 8, -8],
+    y: [-4, 4, -4],
     transition: {
       duration: 6,
       repeat: Infinity,
@@ -85,7 +82,7 @@ export default function HomeSection() {
   return (
     <motion.section
       id="home"
-      className="relative min-h-screen pb-28 sm:pb-0 bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 flex items-center overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 flex items-center overflow-hidden py-8 sm:py-12 lg:py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -108,18 +105,18 @@ export default function HomeSection() {
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
+          className="absolute top-10 left-5 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
           variants={floatingVariants}
           animate="animate"
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full blur-3xl"
+          className="absolute bottom-10 right-5 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full blur-3xl"
           variants={floatingVariants}
           animate="animate"
           transition={{ delay: 2 }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-gradient-to-r from-cyan-200/30 to-blue-200/30 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 w-28 h-28 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 bg-gradient-to-r from-cyan-200/30 to-blue-200/30 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
           variants={floatingVariants}
           animate="animate"
           transition={{ delay: 4 }}
@@ -128,7 +125,7 @@ export default function HomeSection() {
         {sparkles.map((pos, i) => (
           <motion.div
             key={i}
-            className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60"
+            className="absolute w-1 h-1 sm:w-1.5 sm:h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60"
             style={{ top: pos.top, left: pos.left }}
             variants={sparkleVariants}
             animate="animate"
@@ -137,28 +134,28 @@ export default function HomeSection() {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between relative z-10 gap-y-12">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between relative z-10 gap-8 lg:gap-12">
         {/* Left Content */}
-        <div className="text-center lg:text-left lg:w-1/2 space-y-6 sm:space-y-8">
+        <div className="text-center lg:text-left lg:w-1/2 space-y-4 sm:space-y-6 order-2 lg:order-1">
           <motion.div variants={itemVariants}>
             <motion.span
-              className="inline-flex items-center gap-2 px-5 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200/50 text-blue-700 rounded-full text-sm font-medium"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200/50 text-blue-700 rounded-full text-xs sm:text-sm font-medium"
               whileHover={{ scale: 1.05 }}
             >
-              <HiSparkles className="text-base sm:text-lg" />
+              <HiSparkles className="text-sm sm:text-base" />
               Welcome to my portfolio
             </motion.span>
           </motion.div>
 
-          <motion.h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight" variants={itemVariants}>
+          <motion.h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight" variants={itemVariants}>
             Hello, It's Me
           </motion.h1>
 
-          <motion.h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent pb-2" variants={itemVariants}>
+          <motion.h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent pb-1 sm:pb-2" variants={itemVariants}>
             Andes Agnestio
           </motion.h2>
 
-          <motion.div className="text-xl sm:text-2xl lg:text-3xl" variants={itemVariants}>
+          <motion.div className="text-base sm:text-lg md:text-xl lg:text-2xl" variants={itemVariants}>
             <span className="text-gray-600 mr-2">I'm a</span>
             <TypeAnimation
               sequence={[
@@ -175,56 +172,36 @@ export default function HomeSection() {
             />
           </motion.div>
 
-          <motion.p className="text-gray-600 leading-relaxed max-w-md sm:max-w-lg text-base sm:text-lg" variants={itemVariants}>
+          <motion.p className="text-gray-600 leading-relaxed max-w-full sm:max-w-md lg:max-w-lg text-sm sm:text-base" variants={itemVariants}>
             Passionate about creating exceptional digital experiences through innovative design and cutting-edge technology. Let's build something amazing together.
           </motion.p>
 
-          {/* Social Icons */}
-          <motion.div className="flex justify-center lg:justify-start space-x-4 mt-4 sm:mt-8" variants={itemVariants}>
-            {[
-              { Icon: FaInstagram, href: 'https://instagram.com/andessalf', color: 'hover:bg-pink-500' },
-              { Icon: HiOutlineMail, href: 'mailto:andes.agnestio@gmail.com', color: 'hover:bg-red-500' },
-              { Icon: FaTiktok, href: '#', color: 'hover:bg-black' },
-              { Icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/andes-agnestio', color: 'hover:bg-blue-600' },
-            ].map(({ Icon, href, color }, index) => (
-              <motion.a
-                key={index}
-                href={href}
-                target={href.startsWith('http') ? '_blank' : '_self'}
-                rel={href.startsWith('http') ? 'noopener noreferrer' : ''}
-                className={`w-10 h-10 sm:w-12 sm:h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110 ${color}`}
-                whileHover={{ y: -5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Icon className="text-base sm:text-lg" />
-              </motion.a>
-            ))}
-          </motion.div>
+
         </div>
 
         {/* Right Avatar */}
-        <motion.div className="relative mt-10 lg:mt-0 lg:w-1/2 flex justify-center" variants={avatarVariants}>
+        <motion.div className="relative lg:w-1/2 flex justify-center order-1 lg:order-2" variants={avatarVariants}>
           <motion.div className="relative" variants={floatingVariants} animate="animate">
             {/* Orbit Rings */}
             <motion.div
-              className="absolute inset-0 w-60 h-60 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full border border-blue-200/50"
+              className="absolute inset-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border border-blue-200/50"
               variants={orbitalVariants}
               animate="animate"
             >
-              <div className="absolute top-0 left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform -translate-x-1/2 -translate-y-2 shadow-lg" />
+              <div className="absolute top-0 left-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform -translate-x-1/2 -translate-y-1 shadow-lg" />
             </motion.div>
 
             <motion.div
-              className="absolute inset-8 w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full border border-purple-200/40"
+              className="absolute inset-4 sm:inset-6 md:inset-8 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 rounded-full border border-purple-200/40"
               variants={orbitalVariants}
               animate="animate"
               transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
             >
-              <div className="absolute bottom-0 right-1/4 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform translate-y-1 shadow-lg" />
+              <div className="absolute bottom-0 right-1/4 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform translate-y-0.5 shadow-lg" />
             </motion.div>
 
             {/* Avatar Image */}
-            <div className="relative w-60 h-60 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-100/50 via-white to-purple-100/50 border-2 border-white/80 shadow-2xl p-2 sm:p-3 overflow-hidden backdrop-blur-sm">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full bg-gradient-to-br from-blue-100/50 via-white to-purple-100/50 border-2 border-white/80 shadow-2xl p-1.5 sm:p-2 md:p-3 overflow-hidden backdrop-blur-sm">
               <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-white border border-gray-200/50 shadow-inner">
                 <Image
                   src="/andes.png"
@@ -239,33 +216,33 @@ export default function HomeSection() {
 
             {/* Floating Badges */}
             <motion.div
-              className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl p-3 sm:p-4 shadow-xl border border-white/50"
+              className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-xl border border-white/50"
               whileHover={{ scale: 1.15, rotate: 5 }}
               variants={floatingVariants}
               animate="animate"
               transition={{ delay: 1 }}
             >
-              <FaCode className="text-lg sm:text-2xl text-white" />
+              <FaCode className="text-sm sm:text-base md:text-lg text-white" />
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-3 sm:p-4 shadow-xl border border-white/50"
+              className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 md:-bottom-4 md:-left-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-xl border border-white/50"
               whileHover={{ scale: 1.15, rotate: -5 }}
               variants={floatingVariants}
               animate="animate"
               transition={{ delay: 2 }}
             >
-              <FaPalette className="text-lg sm:text-2xl text-white" />
+              <FaPalette className="text-sm sm:text-base md:text-lg text-white" />
             </motion.div>
 
             <motion.div
-              className="absolute top-1/2 -right-3 sm:-right-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-2.5 sm:p-3 shadow-xl border border-white/50 transform -translate-y-1/2"
+              className="absolute top-1/2 -right-1.5 sm:-right-2 md:-right-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl p-1.5 sm:p-2 md:p-2.5 shadow-xl border border-white/50 transform -translate-y-1/2"
               whileHover={{ scale: 1.15, rotate: 10 }}
               variants={floatingVariants}
               animate="animate"
               transition={{ delay: 3 }}
             >
-              <FaRocket className="text-base sm:text-xl text-white" />
+              <FaRocket className="text-sm sm:text-base text-white" />
             </motion.div>
           </motion.div>
         </motion.div>
