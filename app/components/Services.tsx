@@ -86,22 +86,10 @@ const services: Service[] = [
     gradient: 'from-purple-500 to-pink-500'
   },
   {
-    name: 'Mobile App Development',
-    icon: <Smartphone className="text-green-400" />,
-    description: 'Developing cross-platform mobile applications using React Native and Flutter.',
-    gradient: 'from-green-500 to-teal-500'
-  },
-  {
     name: 'Backend Development',
     icon: <Database className="text-orange-400" />,
     description: 'Designing robust server-side architectures and APIs with Node.js, Laravel, and databases.',
     gradient: 'from-orange-500 to-red-500'
-  },
-  {
-    name: 'Cloud Solutions',
-    icon: <Cloud className="text-indigo-400" />,
-    description: 'Implementing scalable cloud-based solutions using AWS, Azure, and Google Cloud.',
-    gradient: 'from-indigo-500 to-blue-500'
   },
   {
     name: 'Consulting & Strategy',
@@ -213,12 +201,11 @@ export default function Services() {
     { Icon: FaPalette, color: 'text-purple-400', delay: 2 },
     { Icon: FaLightbulb, color: 'text-yellow-400', delay: 3 },
     { Icon: FaUsers, color: 'text-indigo-400', delay: 4 },
-    { Icon: FaHeart, color: 'text-pink-400', delay: 5 },
   ];
 
   return (
     <motion.section
-      className="relative min-h-screen bg-gray-900 text-white overflow-hidden py-12 sm:py-16 md:py-20"
+      className="relative min-h-screen bg-gray-900 text-white overflow-hidden pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20"
       id="services"
       initial="hidden"
       whileInView="visible"

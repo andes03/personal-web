@@ -10,7 +10,7 @@ import Services from '@/app/components/Services';
 import Portfolio from '@/app/components/Portfolio';
 import Certificate from '@/app/components/Certificate';
 import Contact from '@/app/components/Contact';
-import Footer from '@/app/components/Footer';
+
 
 export default function HomePage() {
   return (
@@ -41,8 +41,6 @@ export default function HomePage() {
           <Contact />
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

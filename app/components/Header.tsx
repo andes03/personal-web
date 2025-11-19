@@ -9,7 +9,7 @@ const navItems = [
   { name: 'About', href: '#about', icon: User },
   { name: 'Skills', href: '#skills', icon: Code },
   { name: 'Services', href: '#services', icon: Sparkles },
-  { name: 'Projects', href: '#projects', icon: Briefcase },
+  { name: 'Projects', href: '#portfolio', icon: Briefcase },
   { name: 'Certificates', href: '#certificate', icon: Award },
   { name: 'Contact', href: '#contact', icon: Mail },
 ];
@@ -47,7 +47,14 @@ export default function Navbar() {
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80; // Approximate header height for offset
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 

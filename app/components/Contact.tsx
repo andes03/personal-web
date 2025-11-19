@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaInstagram, FaTiktok, FaLinkedinIn, FaGithub, FaHeart, FaRocket, FaCode, FaPalette } from 'react-icons/fa';
+import { FaInstagram, FaLinkedinIn, FaGithub, FaRocket, FaCode, FaPalette } from 'react-icons/fa';
 import { HiOutlineMail, HiSparkles } from 'react-icons/hi';
 
 const containerVariants = {
@@ -87,19 +87,11 @@ export default function ContactSection() {
     },
     {
       Icon: HiOutlineMail,
-      href: 'mailto:andessalf@gmail.com',
+      href: 'mailto:andes.agnestio@gmail.com',
       label: 'Email',
       color: 'hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500',
       iconColor: 'text-blue-500 hover:text-white',
       bgGradient: 'from-blue-500 to-cyan-500',
-    },
-    {
-      Icon: FaTiktok,
-      href: 'https://www.tiktok.com/@pecenehyo',
-      label: 'TikTok',
-      color: 'hover:bg-gradient-to-r hover:from-gray-800 hover:to-black',
-      iconColor: 'text-gray-800 hover:text-white',
-      bgGradient: 'from-gray-800 to-black',
     },
     {
       Icon: FaLinkedinIn,
@@ -114,22 +106,21 @@ export default function ContactSection() {
       href: 'https://github.com/andes03',
       label: 'GitHub',
       color: 'hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900',
-      iconColor: 'text-gray-800 hover:text-white',
+      iconColor: 'text-gray-300 hover:text-white',
       bgGradient: 'from-gray-700 to-gray-900',
     },
   ];
 
   const floatingIcons = [
-    { Icon: FaHeart, color: 'text-pink-400', delay: 0 },
-    { Icon: FaRocket, color: 'text-blue-400', delay: 1 },
-    { Icon: FaCode, color: 'text-green-400', delay: 2 },
-    { Icon: FaPalette, color: 'text-purple-400', delay: 3 },
+    { Icon: FaRocket, color: 'text-blue-400', delay: 0 },
+    { Icon: FaCode, color: 'text-green-400', delay: 1 },
+    { Icon: FaPalette, color: 'text-purple-400', delay: 2 },
   ];
 
   return (
     <motion.section
       id="contact"
-      className="relative py-28 sm:py-36 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden"
+      className="relative min-h-screen bg-gray-900 text-white overflow-hidden pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -141,8 +132,8 @@ export default function ContactSection() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px',
           }}
@@ -171,12 +162,12 @@ export default function ContactSection() {
 
         {/* Orbital Rings */}
         <motion.div
-          className="absolute top-1/4 right-1/4 w-32 h-32 sm:w-40 sm:h-40 rounded-full border border-blue-200/30"
+          className="absolute top-1/4 right-1/4 w-32 h-32 sm:w-40 sm:h-40 rounded-full border border-indigo-500/30"
           variants={orbitalVariants}
           animate="animate"
         />
         <motion.div
-          className="absolute bottom-1/4 left-1/4 w-24 h-24 sm:w-32 sm:h-32 rounded-full border border-purple-200/30"
+          className="absolute bottom-1/4 left-1/4 w-24 h-24 sm:w-32 sm:h-32 rounded-full border border-purple-500/30"
           variants={orbitalVariants}
           animate="animate"
           transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
@@ -217,25 +208,25 @@ export default function ContactSection() {
         {/* Header with Badge */}
         <motion.div className="mb-8" variants={itemVariants}>
           <motion.span
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200/50 text-blue-700 rounded-full text-sm font-medium shadow-lg"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-indigo-300 rounded-full text-sm font-medium shadow-lg"
             whileHover={{ scale: 1.05 }}
             variants={pulseVariants}
             animate="animate"
           >
-            <HiSparkles className="text-lg" />
+            <HiSparkles className="text-lg text-indigo-400" />
             Let's work together
           </motion.span>
         </motion.div>
 
         <motion.h2
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6"
           variants={itemVariants}
         >
           Let's Connect
         </motion.h2>
 
         <motion.p
-          className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
           variants={itemVariants}
         >
           Ready to bring your ideas to life? I'm always excited to collaborate on amazing projects and create something extraordinary together. Let's connect and make magic happen! ✨
@@ -268,9 +259,9 @@ export default function ContactSection() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative w-14 h-14 sm:w-16 sm:h-16 bg-white/80 backdrop-blur-sm border-2 border-gray-200/50 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-2xl group ${color}`}
-                whileHover={{ 
-                  y: -8, 
+                className={`relative w-14 h-14 sm:w-16 sm:h-16 bg-gray-800/80 backdrop-blur-sm border-2 border-gray-700/50 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-2xl group ${color}`}
+                whileHover={{
+                  y: -8,
                   scale: 1.1,
                   rotate: [0, -5, 5, -5, 0],
                   transition: { duration: 0.3 }
@@ -281,7 +272,7 @@ export default function ContactSection() {
                 }}
               >
                 <Icon className={`text-2xl sm:text-3xl transition-all duration-300 ${iconColor}`} />
-                
+
                 {/* Ripple Effect */}
                 <motion.div
                   className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20"
@@ -289,8 +280,8 @@ export default function ContactSection() {
                     background: `linear-gradient(45deg, ${
                       idx === 0 ? '#ec4899, #f97316' :
                       idx === 1 ? '#3b82f6, #06b6d4' :
-                      idx === 2 ? '#374151, #000000' :
-                      idx === 3 ? '#2563eb, #1e40af' :
+                      idx === 2 ? '#2563eb, #1e40af' :
+                      idx === 3 ? '#374151, #111827' :
                       '#374151, #111827'
                     })`,
                   }}
@@ -301,13 +292,13 @@ export default function ContactSection() {
               <motion.div
                 className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                 initial={{ y: 10, opacity: 0 }}
-                animate={{ 
+                animate={{
                   y: isHovered === idx ? 0 : 10,
                   opacity: isHovered === idx ? 1 : 0,
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <span className="text-xs font-medium text-gray-700 whitespace-nowrap bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-200/50">
+                <span className="text-xs font-medium text-gray-300 whitespace-nowrap bg-gray-800/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-700/50">
                   {label}
                 </span>
               </motion.div>

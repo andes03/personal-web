@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaDownload, FaHeart, FaRocket, FaCode, FaPalette, FaLightbulb, FaUsers, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { FaDownload, FaRocket, FaCode, FaPalette, FaLightbulb, FaUsers } from 'react-icons/fa';
 import { HiSparkles, HiOutlineAcademicCap } from 'react-icons/hi';
 import Link from 'next/link';
 
@@ -95,12 +95,11 @@ export default function AboutMe() {
   const techStack: TechStackItem[] = [];
 
   const floatingIcons = [
-    { Icon: FaHeart, color: 'text-pink-400', delay: 0 },
-    { Icon: FaRocket, color: 'text-blue-400', delay: 1 },
-    { Icon: FaCode, color: 'text-green-400', delay: 2 },
-    { Icon: FaPalette, color: 'text-purple-400', delay: 3 },
-    { Icon: FaLightbulb, color: 'text-yellow-400', delay: 4 },
-    { Icon: FaUsers, color: 'text-indigo-400', delay: 5 },
+    { Icon: FaRocket, color: 'text-blue-400', delay: 0 },
+    { Icon: FaCode, color: 'text-green-400', delay: 1 },
+    { Icon: FaPalette, color: 'text-purple-400', delay: 2 },
+    { Icon: FaLightbulb, color: 'text-yellow-400', delay: 3 },
+    { Icon: FaUsers, color: 'text-indigo-400', delay: 4 },
   ];
 
   return (
@@ -247,18 +246,18 @@ export default function AboutMe() {
                     About Me
                   </motion.h2>
 
-                  <motion.p 
+                  <motion.p
                     className="text-lg leading-relaxed text-gray-300"
                     variants={itemVariants}
                   >
-                    Hi! I'm <span className="font-semibold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Andes Agnestio</span>, a passionate Information Systems student at <strong className="text-blue-400">Universitas Atma Jaya Yogyakarta</strong> who loves crafting beautiful and user-friendly web applications. I enjoy working with <strong className="text-cyan-400">JavaScript</strong>, <strong className="text-blue-400">React</strong>, and <strong className="text-green-400">Node.js</strong> to turn complex problems into elegant digital experiences.
+                    Hi! I'm <span className="font-semibold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Andes Agnestio</span>, a passionate Information Systems student at <strong className="text-blue-400">Universitas Atma Jaya Yogyakarta</strong> who loves crafting beautiful and user-friendly web applications. I specialize in developing cutting-edge web applications that deliver exceptional user experiences.
                   </motion.p>
 
-                  <motion.p 
+                  <motion.p
                     className="text-lg leading-relaxed text-gray-300"
                     variants={itemVariants}
                   >
-                    Currently, I'm focusing on full-stack development with <strong className="text-purple-400">Next.js</strong>, constantly exploring better ways to build performant and scalable web apps. ✨
+                    Currently, I'm focusing on full-stack development with <strong className="text-purple-400">Next.js</strong> and <strong className="text-orange-400">Laravel</strong>, constantly exploring better ways to build performant and scalable web apps. ✨
                   </motion.p>
 
                   {/* Enhanced Tech Stack Icons */}
@@ -316,71 +315,7 @@ export default function AboutMe() {
                     </motion.div>
                   )}
 
-                  {/* Social Media Links */}
-                  <motion.div 
-                    className="flex items-center justify-center gap-6"
-                    variants={itemVariants}
-                  >
-                    <motion.a
-                      href="https://www.instagram.com/your_instagram"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative"
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300"
-                        animate={{
-                          scale: [1, 1.2, 1],
-                        }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                      />
-                      <div className="relative w-12 h-12 bg-gray-800/80 backdrop-blur-sm border-2 border-gray-700/50 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-2xl group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-orange-500 group-hover:border-transparent">
-                        <FaInstagram className="text-xl text-pink-400 group-hover:text-white transition-colors duration-300" />
-                      </div>
-                    </motion.a>
 
-                    <motion.a
-                      href="https://www.linkedin.com/in/your_linkedin"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative"
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300"
-                        animate={{
-                          scale: [1, 1.2, 1],
-                        }}
-                        transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                      />
-                      <div className="relative w-12 h-12 bg-gray-800/80 backdrop-blur-sm border-2 border-gray-700/50 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-blue-600 group-hover:border-transparent">
-                        <FaLinkedin className="text-xl text-blue-400 group-hover:text-white transition-colors duration-300" />
-                      </div>
-                    </motion.a>
-
-                    <motion.a
-                      href="https://www.tiktok.com/@your_tiktok"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative"
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-black to-red-500 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300"
-                        animate={{
-                          scale: [1, 1.2, 1],
-                        }}
-                        transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                      />
-                      <div className="relative w-12 h-12 bg-gray-800/80 backdrop-blur-sm border-2 border-gray-700/50 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-2xl group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-red-500 group-hover:border-transparent">
-                        <FaTiktok className="text-xl text-gray-300 group-hover:text-white transition-colors duration-300" />
-                      </div>
-                    </motion.a>
-                  </motion.div>
 
                   {/* Enhanced Download Button */}
                   <motion.div 

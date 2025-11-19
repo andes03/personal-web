@@ -507,12 +507,11 @@ export default function Skills() {
     { Icon: FaPalette, color: 'text-purple-400', delay: 2 },
     { Icon: FaLightbulb, color: 'text-yellow-400', delay: 3 },
     { Icon: FaUsers, color: 'text-indigo-400', delay: 4 },
-    { Icon: FaHeart, color: 'text-pink-400', delay: 5 },
   ];
 
   return (
     <motion.section
-      className="relative min-h-screen bg-gray-900 text-white overflow-hidden py-12 sm:py-16 md:py-20"
+      className="relative min-h-screen bg-gray-900 text-white overflow-hidden pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20"
       id="skills"
       initial="hidden"
       whileInView="visible"

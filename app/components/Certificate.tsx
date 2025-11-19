@@ -92,7 +92,7 @@ export default function Certificate() {
   return (
     <motion.section
       id="certificate"
-      className="relative min-h-screen bg-gray-900 text-white overflow-hidden py-12 sm:py-16 md:py-20"
+      className="relative min-h-screen bg-gray-900 text-white overflow-hidden pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
