@@ -6,6 +6,7 @@ import Header from '@/app/components/Header';
 import HomeSection from '@/app/components/HomeSection';
 import AboutMe from '@/app/components/AboutMe';
 import Skills from '@/app/components/Skills';
+import Services from '@/app/components/Services';
 import Portfolio from '@/app/components/Portfolio';
 import Certificate from '@/app/components/Certificate';
 import Contact from '@/app/components/Contact';
@@ -26,6 +27,9 @@ export default function HomePage() {
         </section>
         <section id="skills">
           <Skills />
+        </section>
+        <section id="services">
+          <Services />
         </section>
         <section id="portfolio">
           <Portfolio />
